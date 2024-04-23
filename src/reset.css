@@ -22,10 +22,11 @@ code {
 }
 
 :root {
-    --dark: #1F1F21;
+    --headerBackground: #1F1F21;
     --background: #252627;
+    --grayBackground: #545454;
+    --cardBackground: #2C2D2D;
     --grayText: #878787;
-    --select: #545454;
 }
 
 select {
@@ -40,4 +41,8 @@ select {
 /*Explorer*/
 select::-ms-expand {
     display: none;
+}
+
+ul, li {
+    list-style: none;
 }

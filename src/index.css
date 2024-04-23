@@ -6,7 +6,7 @@ header {
     padding: 25px;
     font-size: 18px;
     font-weight: 500;
-    background-color: var(--dark);
+    background-color: var(--headerBackground);
 }
 
 .wrapper {
@@ -26,7 +26,7 @@ header {
     padding: 18px 15px;
     width: 100%;
     border-radius: 10px;
-    background-color: var(--select);
+    background-color: var(--grayBackground);
     font-size: 12px;
     font-weight: 700;
 }
@@ -41,7 +41,7 @@ header {
     display: block;
     width: 10px;
     height: 10px;
-    background-image: url("../public/img/arrow-down.png");
+    background-image: url("assets/img/arrow-down.png");
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1;
@@ -49,5 +49,64 @@ header {
 }
 
 .select-wrapper-active::before {
-    background-image: url("../public/img/arrow-up.png");
+    background-image: url("assets/img/arrow-up.png");
+}
+
+.cards {
+    margin: 90px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.user-card {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 20%;
+    min-width: 400px;
+    background: var(--cardBackground);
+    border-radius: 20px;
+}
+
+.user-card-header {
+    display: flex;
+}
+
+.user-card-header > div {
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-card-header__initials {
+    padding: 17px;
+    background-color: var(--grayBackground);
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.user-card-header__name {
+    font-size: 24px;
+}
+
+.user-card-header__username {
+    font-size: 16px;
+}
+
+.user-card-info {
+    padding-top: 10px;
+}
+
+.user-card-info>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-card-info__item {
+    display: flex;
+    gap: 5px;
 }

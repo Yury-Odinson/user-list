@@ -8,3 +8,46 @@ header {
     font-weight: 500;
     background-color: var(--dark);
 }
+
+.wrapper {
+    margin: 0 auto;
+    padding: 22px 0;
+    max-width: 1660px;
+}
+
+.select-wrapper,
+.select-wrapper-active {
+    position: relative;
+    width: 24%;
+}
+
+.select {
+    position: relative;
+    padding: 18px 15px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--select);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.select-wrapper::before,
+.select-wrapper-active::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-image: url("../public/img/arrow-down.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.select-wrapper-active::before {
+    background-image: url("../public/img/arrow-up.png");
+}

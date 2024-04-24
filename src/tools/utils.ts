@@ -1,4 +1,4 @@
-export type cardProps = {
+export type CardProps = {
     id: number,
     name: string,
     username: string,
@@ -20,6 +20,10 @@ export type cardProps = {
         catchPhrase: string,
         bs: string
     }
+};
+
+export type SelectProps = {
+    names: string[];
 };
 
 export const getData = async () => {

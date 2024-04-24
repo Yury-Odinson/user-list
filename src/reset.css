@@ -50,3 +50,7 @@ ul, li {
 a {
     text-decoration: none;
 }
+
+input:focus {
+    outline: 0;
+}

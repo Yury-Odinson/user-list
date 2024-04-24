@@ -1,16 +1,27 @@
 import iconMail from "../assets/img/user-card-mail.png";
 import iconWebsite from "../assets/img/user-card-website.png";
 import iconPhone from "../assets/img/user-card-phone.png";
+import {cardProps} from "../tools/utils";
 
 
-export const UserCard = () => {
+export const UserCard = ({name, username, email, website, phone, company, address, id}: cardProps) => {
+
+    const getInitials = (): string => {
+        const words: string[] = name.split(" ");
+        const firstLetter: string = words[0].charAt(0);
+        const secondLetter: string = words[1].charAt(0);
+        return firstLetter + secondLetter;
+    };
+
     return (
         <div className="user-card">
             <div className="user-card-header">
-                <p className="user-card-header__initials">LA</p>
+                <div className="user-card-header__initials">
+                    <p>{getInitials()}</p>
+                </div>
                 <div>
-                    <p className="user-card-header__name">name</p>
-                    <p className="user-card-header__username">username</p>
+                    <p className="user-card-header__name">{name}</p>
+                    <p className="user-card-header__username">{username}</p>
                 </div>
             </div>
 
@@ -18,19 +29,18 @@ export const UserCard = () => {
                 <ul>
                     <li className="user-card-info__item">
                         <img src={iconMail} width={25} height={25} alt="mail"/>
-                        <p>email: email</p>
+                        <p>email: <a type="email" href={`mailto:${email}`}>{email}</a></p>
                     </li>
                     <li className="user-card-info__item">
                         <img src={iconWebsite} width={25} height={25} alt="mail"/>
-                        <p>website: website</p>
+                        <p>website: <a href={website} target="_blank">{website}</a></p>
                     </li>
                     <li className="user-card-info__item">
                         <img src={iconPhone} width={25} height={25} alt="mail"/>
-                        <p>phone: phone</p>
+                        <p>phone: <a type="phone" href={`tel:${phone}`}>{phone}</a></p>
                     </li>
                 </ul>
             </div>
-
 
         </div>
     );

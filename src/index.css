@@ -11,8 +11,8 @@ header {
 
 .wrapper {
     margin: 0 auto;
-    padding: 22px 0;
-    max-width: 1660px;
+    padding: 20px;
+    max-width: 1640px;
 }
 
 .select-wrapper,
@@ -72,6 +72,7 @@ header {
 
 .user-card-header {
     display: flex;
+    cursor: default;
 }
 
 .user-card-header > div {
@@ -82,10 +83,20 @@ header {
 }
 
 .user-card-header__initials {
+    position: relative;
     padding: 17px;
+    width: 70px;
+    height: 70px;
     background-color: var(--grayBackground);
     border-radius: 10px;
     font-size: 30px;
+}
+
+.user-card-header__initials > p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .user-card-header__name {
@@ -100,7 +111,7 @@ header {
     padding-top: 10px;
 }
 
-.user-card-info>ul {
+.user-card-info > ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -108,5 +119,7 @@ header {
 
 .user-card-info__item {
     display: flex;
+    align-items: center;
     gap: 5px;
+    font-size: 15px;
 }

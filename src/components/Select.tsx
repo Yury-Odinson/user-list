@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
-import {FilterContext, updateData, updateOptions} from "../tools/utils";
+import {FilterContext, updateOptions} from "../tools/utils";
 import {SelectProps} from "../tools/types";
 
 export const Select: React.FC<SelectProps> = ({names}) => {
@@ -36,6 +36,14 @@ export const Select: React.FC<SelectProps> = ({names}) => {
         }
     };
 
+    const getFirstName = () => {
+        const firstWords = filter.filter.map(e => {
+            const firstNames = e.split(" ");
+            return firstNames[0];
+        });
+        return firstWords.join(", ");
+    };
+
     // background - for close options pop-up
     const background = () => (
         <div className="select-background" onClick={() => setIsOpened(false)}/>
@@ -52,12 +60,28 @@ export const Select: React.FC<SelectProps> = ({names}) => {
 
     return (
         <div className={isOpened ? "select-wrapper-active" : "select-wrapper"}>
-            <div className="select" onClick={() => setIsOpened(!isOpened)}>
-                <input className="select-input" type="text" onChange={(e) => {
-                    setFilterString(e.target.value)
+            <div className="select">
+                <input className="select-input" type="text"
+                       onChange={(e) => {
+                           searchInUsers(e.target.value);
+                       }}
+                       onClick={() => setIsOpened(!isOpened)}
+                />
+                <div className="select-description">
+                    <p className="select-description__item">Filter: {filter.filter.length}</p>
+                    <button className="select-description__button" onClick={() => filter.setFilter([])}>
+                        clear all
+                    </button>
+                </div>
 
-                    searchInUsers(e.target.value)
-                }}/>
+                <div className="select-description-details">
+                    <p>Name:
+                        <span>
+                            {getFirstName()}
+                        </span>
+                    </p>
+                </div>
+
                 <div className={isOpened ? "select-options-active" : "select-options"}>
                     {
                         optionValues?.map((e) => (

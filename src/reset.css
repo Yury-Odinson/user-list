@@ -54,3 +54,8 @@ a {
 input:focus {
     outline: 0;
 }
+
+button {
+    border: none;
+    cursor: pointer;
+}

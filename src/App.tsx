@@ -1,8 +1,9 @@
-import React, { useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Header} from "./components/Header";
 import {Select} from "./components/Select";
 import {UserCard} from "./components/UserCard";
-import {CardProps, FilterContext, getData} from "./tools/utils";
+import {FilterContext, getData, updateData} from "./tools/utils";
+import {CardProps} from "./tools/types";
 
 function App() {
 
@@ -16,8 +17,12 @@ function App() {
             setData(cards);
             const namesArray = cards.map(card => card.name);
             setNames(namesArray);
+            if (filter.length > 0) {
+                setData(updateData(cards, filter));
+            }
         });
-    }, []);
+
+    }, [filter]);
 
     return (
         <FilterContext.Provider value={{filter, setFilter}}>

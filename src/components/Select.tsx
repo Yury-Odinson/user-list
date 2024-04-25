@@ -1,5 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
-import {FilterContext, SelectProps} from "../tools/utils";
+import {FilterContext} from "../tools/utils";
+import {SelectProps} from "../tools/types";
 
 export const Select: React.FC<SelectProps> = ({names}) => {
 

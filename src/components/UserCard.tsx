@@ -1,7 +1,7 @@
 import iconMail from "../assets/img/user-card-mail.png";
 import iconWebsite from "../assets/img/user-card-website.png";
 import iconPhone from "../assets/img/user-card-phone.png";
-import {CardProps} from "../tools/utils";
+import {CardProps} from "../tools/types";
 
 
 export const UserCard = ({name, username, email, website, phone}: CardProps) => {

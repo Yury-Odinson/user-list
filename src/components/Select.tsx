@@ -50,8 +50,8 @@ export const Select: React.FC<SelectProps> = ({names}) => {
     );
 
     const option = (value: string) => (
-        <div className="checkbox-area">
-            <label className="select-options__item" key={value}>
+        <div className="checkbox-area" key={value}>
+            <label className="select-options__item">
                 <input className="default-checkbox" type="checkbox" onChange={() => {
                     setFilterArray(value)
                 }}/>
@@ -76,7 +76,6 @@ export const Select: React.FC<SelectProps> = ({names}) => {
                         clear all
                     </button>
                 </div>
-
                 <div className="select-description-details">
                     <p>Name:
                         <span>
@@ -84,7 +83,6 @@ export const Select: React.FC<SelectProps> = ({names}) => {
                         </span>
                     </p>
                 </div>
-
                 <div className={isOpened ? "select-options-active" : "select-options"}>
                     {
                         optionValues?.map((e) => (

@@ -11,7 +11,6 @@ import iconBs from "../assets/img/user-card-bs.png";
 import {CardProps} from "../tools/types";
 import {useState} from "react";
 
-
 export const UserCard = ({name, username, email, website, phone, address, company}: CardProps) => {
 
     const [inDetail, setInDetail] = useState<boolean>(false);
@@ -36,7 +35,6 @@ export const UserCard = ({name, username, email, website, phone, address, compan
                     <p className="user-card-header__username">{username}</p>
                 </div>
             </div>
-
             <div className="user-card-info">
                 <ul>
                     <li className="user-card-info__item">
@@ -51,8 +49,6 @@ export const UserCard = ({name, username, email, website, phone, address, compan
                         <img src={iconPhone} width={25} height={25} alt="mail"/>
                         <p>phone: <a type="phone" href={`tel:${phone}`}>{phone}</a></p>
                     </li>
-
-
                     <li className="user-card-info__item">
                         <img src={iconStreet} width={25} height={25} alt="mail"/>
                         <p>street: {address.street}</p>
@@ -81,10 +77,8 @@ export const UserCard = ({name, username, email, website, phone, address, compan
                         <img src={iconBs} width={25} height={25} alt="mail"/>
                         <p>bs: {company.bs}</p>
                     </li>
-
                 </ul>
             </div>
-
         </div>
     );
 };

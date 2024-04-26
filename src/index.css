@@ -133,8 +133,15 @@ header {
     flex-grow: 1;
     flex-basis: 20%;
     min-width: 400px;
+    max-height: 200px;
+    overflow: hidden;
     background: var(--cardBackground);
     border-radius: 20px;
+    transition: max-height 0.3s ease;
+}
+
+.user-card-inDetail {
+    max-height: 1000px;
 }
 
 .user-card-header {
@@ -176,6 +183,9 @@ header {
 
 .user-card-info {
     padding-top: 10px;
+
+    /*overflow: hidden;*/
+    /*max-height: 105px;*/
 }
 
 .user-card-info > ul {

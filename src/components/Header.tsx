@@ -1,7 +1,9 @@
 export const Header = () => {
     return (
         <header>
-            <p>User list</p>
+            <div className="header-wrapper">
+                <p>User list</p>
+            </div>
         </header>
     );
 };

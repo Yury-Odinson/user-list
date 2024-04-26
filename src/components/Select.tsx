@@ -50,12 +50,15 @@ export const Select: React.FC<SelectProps> = ({names}) => {
     );
 
     const option = (value: string) => (
-        <label className="select-options__item" key={value}>
-            <input type="checkbox" onChange={() => {
-                setFilterArray(value)
-            }}/>
-            <p>{value}</p>
-        </label>
+        <div className="checkbox-area">
+            <label className="select-options__item" key={value}>
+                <input className="default-checkbox" type="checkbox" onChange={() => {
+                    setFilterArray(value)
+                }}/>
+                <span className="custom-checkbox"/>
+                <p>{value}</p>
+            </label>
+        </div>
     );
 
     return (

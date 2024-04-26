@@ -183,9 +183,6 @@ header {
 
 .user-card-info {
     padding-top: 10px;
-
-    /*overflow: hidden;*/
-    /*max-height: 105px;*/
 }
 
 .user-card-info > ul {
@@ -199,4 +196,31 @@ header {
     align-items: center;
     gap: 5px;
     font-size: 15px;
+}
+
+.default-checkbox {
+    display: none;
+}
+
+.custom-checkbox {
+    position: relative;
+}
+
+.custom-checkbox::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    border: 2px solid #F2F3F5;
+    border-radius: 5px;
+}
+
+.default-checkbox:checked + .custom-checkbox::before {
+    background-image: url("../src/assets/img/checked.png");
+    background-position: center;
+    background-repeat: no-repeat;
 }

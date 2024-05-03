@@ -30,7 +30,6 @@ export const Select: React.FC<SelectProps> = ({names}) => {
         const filteredArray = filter.filter;
         if (filteredArray.includes(value)) {
             filter.setFilter(filteredArray.filter(item => item !== value));
-            // updateData()
         } else {
             filter.setFilter([...filteredArray, value]);
         }
@@ -64,7 +63,7 @@ export const Select: React.FC<SelectProps> = ({names}) => {
     return (
         <div className={isOpened ? "select-wrapper-active" : "select-wrapper"}>
             <div className="select">
-                <input className="select-input" type="text"
+                <input className="select-input" type="text" placeholder="Select name"
                        onChange={(e) => {
                            searchInUsers(e.target.value);
                        }}
